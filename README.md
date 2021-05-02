@@ -8,3 +8,5 @@ Minesweeper: Final project.  A minesweeper game with a semi functional AI to hel
 Huffman: A basic algorithm that implements huffman encoding and decoding for an image
 
 Assignment2: Encrypted communications between Arduinos
+
+Weekly's 1-5 and MoneyBags: weekly exercises for different problems.  Readme's are available either in subm or soln
