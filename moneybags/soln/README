@@ -1,0 +1,18 @@
+name: Ryan Brooks
+id #: 1530605
+course: CMPUT 274 fall 2018
+
+assignment: Weekly exercise 7: Dr. moneybags
+
+included files: moneybags.cpp
+                README
+
+instructions:
+iostream and stdio.h were included.
+If you are using the test centre:
+place the code in the soln folder of the test centre zip file and
+in the terminal run the test centre using ./opentestcenter.sh and then use
+ctrl + r or click run
+if you are using the termianl:
+compile the code using g++ moneybags.cpp ./a.out
+then it can be run using ./moneybags

@@ -1,0 +1,18 @@
+name: Ryan Brooks
+id #: 1530605
+course: CMPUT 274 fall 2018
+
+assignment: Weekly exercise 3: Word Frequency
+
+included files: freq.py
+                README
+
+instructions:
+import sys and from collections import Counter were used
+navigate to the proper folder in the terminal and run python3 freq.py <input_file_name>
+where <input_file_name> is the name of the file you wish to be read.
+
+Notes:
+the style checker is giving a style error of E722 do not use bare except in my read file fumction.
+I haven't fixed this because after some research I was not able to find a specific error for reading
+files therefore I do not know what specific error to put in the except line.

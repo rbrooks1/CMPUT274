@@ -1,0 +1,15 @@
+This frequency analysis program works well
+to count the number of words in a plain text file.
+However, it does not normalize the words at all,
+so HELLO is different from hello which is also
+different from Hello! This is one limitation to the 
+program.
+
+Another limitation is that punctuation is not removed
+before analyzing the words. So for example, the word
+"words" is now in quotes and will be considered differently
+from any other instance of that word in the file!
+
+For our purposes, the program works well. However,
+it is useful to note that sometimes we might want to
+consider more normalized text.

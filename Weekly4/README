@@ -1,0 +1,22 @@
+name: Ryan Brooks
+id #: 1530605
+course: CMPUT 274 fall 2018
+
+assignment: Weekly exercise 4: Word preprocessing
+
+included files: freq.py
+                README
+                stop-words
+
+instructions:
+import sys and import string are used
+run the file from the proper folder in the terminal using python3 preprocessing.py <mode>
+where mode can be any one of keep-symbols, keep-stops, or keep-digits.
+The program will return a space seperated list of all strings remaining
+after being processed.
+
+notes:
+all credit was given in the code where the lines taken from the internet were used.
+There is a little bit of hard coding (for the modes) in my code as I was getting a style
+error of line to long and when I tried to fix it by moving part of the line to a newline
+I was getting a syntax error when I tried to run my code.

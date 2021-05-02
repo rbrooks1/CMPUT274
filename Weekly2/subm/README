@@ -1,0 +1,20 @@
+name: Ryan Brooks
+id #: 1530605
+course: CMPUT 274 fall 2018
+
+assignment: Weekly exercise 2: Unfair Dice
+
+included files: unfairDice.py
+                README
+
+instructions: 
+import random was imported in the global section of the code
+so it should be imported as well as importing the functions.
+use import unfairDice to import the .py file for use in other code.
+to run this code from the terminal use python3 unfairDice,py.
+although there is a pass in the if __name__ == '__main__':
+so nothing will happen if the function is called from the terminal.
+
+notes: 
+the original return value for the first function was changed 
+from rolls to rollsList.

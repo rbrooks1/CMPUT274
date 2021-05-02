@@ -1,0 +1,22 @@
+name: Ryan Brooks
+id #: 1530605
+course: CMPUT 274 fall 2018
+
+assignment: Weekly exercise 1: Password Validator
+
+included files: validator.py
+                README
+
+instructions: running from the terminal: to run this code from the terminal
+use python3 validator.py.  the instructions on what should be imported follow
+import validator and input a string value in place of password for 
+validator.validate(password) and an integer value greater than or equal to 8 in
+place of n in validator.generate(n).
+import string and from random import randint, shuffle are in the global section
+of my code so they should also be imported
+
+Notes:
+I have a while loop in the generator that checks if the n value is less than 8
+and returns Try again
+There is a pass statement in the if __name__ == '__main__': section to make sure 
+that no EOF error occurs.
