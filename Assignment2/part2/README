@@ -1,0 +1,56 @@
+Name: Charlie Chen, Ryan Brooks
+ID: 1530488
+course: CMPUT 274 Fall 2018
+
+Assignment 2 Part 2: Encrypted Arduino Communication, Complete Implementation
+
+Collaboration: Full collaboration with Ryan Brooks using the "Full Collaboration" model.
+Credits: 
+Assistance from TA Yunpeng Tang with understanding the mulmod algorithm. Assistance from TA's Patrisha De Boon and Jason Cannon with debugging the "chat" and "main" functions.
+Functions powModFast() taken from the powmod.cpp file provided on EClass.
+Functions wait_on_serial3(), uint32_to_serial3(), uint32_from_serial3(), and new_key() taken from the Assignment 2 desciption on EClass.
+Function chat() based on code in the encrypt_decrypt.cpp file provided on EClass.
+
+Included files:
+    * assignment.2.part.2.cpp
+    * powmod.h
+    * Makefile
+    * README
+
+Accessories:
+    * 2 Arduino Mega Boards (AMG)
+    * 2 5 band resistors
+
+Wiring Instructions:
+    TX3 pin on client board  <--> RX3 pin on server board 
+    RX3 pin on client board  <--> TX3 pin on serverboard 
+    GND on client board <--> GND on server board 
+    For the client board:
+        Pin 13 <--> resistor <--> GND
+    For the server board:
+        Pin 13 <--> resistor <--> 5V
+
+Running Instructions:
+    For running on 2 different PC's
+    1. Connect one Arduino to one PC using a USB cable. Connect the other Arduino to another PC. Ensure that the Arduino is using the proper serial port (/dev/ttyACM0 or -ACM1).
+
+    2. Extract the assignment.2.part.2 file from assignment2.part.2.tar.gz. In the directory containing the uncompressed files assignment.2.part.2, powmod.h, Makefile, and README use the command "make upload" to upload the code to the Arduino. Use Serial-mon to view the serial monitor. 
+
+    3. Your own public key will be calculated by the program. The program will initiate the handshake process. Allow the program at least 3 seconds to finish the process. Once the process concludes, your shared key is already calculated. You may now enter characters into the serial. The program will encrypt the character using XOR encryption using the shared key as the encryption key and send it through the serial connection. The other Arduino will decrypt the character and print the decrypted byte value and the character to the other serial monitor. Everytime a character is encrypted or decrypted, the next_key() program uses the Parker-Miller algorithm to generate a new key for the next encryption.
+
+    For running on 1 PC
+    1. Connect both Arduinos to the PC using USB cables. Ensure that the Arduinos are using the proper serial ports (/dev/ttyACM0 and -ACM1).
+
+    2. Extract the assignment.2.part.2 file from assignment.2.part.2.tar.gz. In the directory containing the uncompressed files assignment.2.part.2.cpp, powmod.h, Makefile, and README use the command "make upload-0" to upload the code to the Arduino connected to port 0, use "make upload-1" to upload the code to the Arduino connected to port 1. Use Serial-mon-0 to view the serial monitor for port 0, use Serial-mon-1 to view the serial monitor to view the serial monitor for port 1. 
+
+    3. Your own public key will be calculated by the program.The program will initiate the handshake process. Allow the program at least 3 seconds to finish the process. Once the process concludes, your shared key is already calculated. You may now enter characters into the serial. The program will encrypt the character using XOR encryption using the shared key as the encryption key and send it through the serial connection. The other Arduino will decrypt the character and print the decrypted byte value and the character to the other serial monitor. Everytime a character is encrypted or decrypted, the next_key() program uses the Parker-Miller algorithm to generate a new key for the next encryption.
+
+    Notes and Assumptions:
+    The private keys are computed by performing analogRead() on pin 1 and taking the least significant bit 32 times with a 50ms delay to allow the voltage on the pin to change. 
+    It is assumed that nothing is connected to pin 1 and that 50ms is enough time to allow the voltage on pin 1 to fluctuate.
+    It is also assumed that the user only wishes to send one character at a time to the recipient.
+    This code should work with other verions of the code that wait for there to be a byte in the serial buffer before reading from the serial connection.
+    When running the style checker, there is a "potential indentation error" that appears on line 87 despite the curly bracket being on the same line as the "if" statement it terminates.
+    The style checker also picks up "Deprecated casting" for the ">>"" operators in the uint32_to_serial3() and uint32_from_serial3() functions provided to us on EClass. This does not affect the running of the code and I am unsure on how to fix it.
+    The style checker also dislikes the "unsigned long" in the wait_on_serial3() function. This does not affect the the functionality of the code.
+    "powmod.h" is in the same folder/directory as the code, however the style checker asks me to specify a path for the ".h" file and I am unsure on how to do so. This does not affect the functionality of the code.

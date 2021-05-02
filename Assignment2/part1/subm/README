@@ -1,0 +1,50 @@
+Name: Charlie Chen, Ryan Brooks
+ID: 1530605
+Course: CKPUT 274 fall 2018
+assignment: Assignment 2 part 1: encryped arduino communication simple proof of concept
+
+Collaboration: Full collaboration with Charlie Chen using the "Full Collaboration" model.
+Credits: 
+Assistance from TA Jason Cannon with figuring out the random number generation. Assistance from TA Arseniy Kouzmenkov with figuring out the correct wiring for the 2 Arduinos. Assistance from TA Taher Jafferjee for debugging the chat loop.
+Function readString() taken from the read_int.cpp file provided on EClass.
+Functions powmod() and diffieHellman() taken from the diffie_hellman_prelim.cpp file provided on EClass.
+Function chat() based on code in the encrypt_decrypt.cpp file provided on EClass.
+
+Included files:
+    * assignment.2.part.1.cpp
+    * Makefile
+    * README
+
+Accessories:
+    * 2 Arduino Mega Boards (AMG)
+
+Wiring Instruction:
+    Choose one Mega board to be board 1, the other to be board 2. 
+    TX3 pin on board 1 <--> RX3 pin on board 2
+    RX3 pin on board 1 <--> TX3 pin on board 2
+    GND on board 1 <--> GND on board 2
+
+Running Instructions:
+    For running on 2 different PC's
+    1. Connect one Arduino to one PC using a USB cable. Connect the other Arduino to another PC. Ensure that the Arduino is using the proper serial port (/dev/ttyACM0 or -ACM1).
+
+    2. Extract the assignment.2.part.1 file from assignment2.part.1.tar.gz. In the directory containing the uncompressed files assignment.2.part.1, Makefile, and README use the command "make upload" to upload the code to the Arduino. Use Serial-mon to view the serial monitor. 
+
+    3. Your own public key will be calculated by the program. Read your partner's public key from their monitor and enter it after the serial monitor prompts you to do so. After the program calculates and displays the shared key, you may enter characters into the serial. The program will encrypt the character using XOR encryption using the shared key as the encryption key and send it through the serial connection. The other Arduino will decrypt the character and print the decrypted byte value and the character to the other serial monitor.
+
+    For running on 1 PC
+    1. Connect both Arduinos to the PC using USB cables. Ensure that the Arduinos are using the proper serial ports (/dev/ttyACM0 and -ACM1).
+
+    2. Extract the assignment.2.part.1 file from assignment2.part.1.tar.gz. In the directory containing the uncompressed files assignment.2.part.1, Makefile, and README use the command "make upload-0" to upload the code to the Arduino connected to port 0, use "make upload-1" to upload the code to the Arduino connected to port 1. Use Serial-mon-0 to view the serial monitor for port 0, use Serial-mon-1 to view the serial monitor to view the serial monitor for port 1. 
+
+    3. Your own public key will be calculated by the program. Read the other public key from the other serial monitor and enter it after the serial monitor prompts you to do so, enter your public key into the other serial monitor. After the program calculates and displays the shared key, you may enter characters into the serial. The program will encrypt the character using XOR encryption using the shared key as the encryption key and send it through the serial connection. The other Arduino will decrypt the character and print the decrypted byte value and the character to the other serial monitor.
+
+Notes and Assumptions:
+    The private keys are computed by performing analogRead() on pin 1 and taking the least significant bit 16 times with a 50ms delay to allow the voltage on the pin to change. 
+    It is assumed that nothing is connected to pin 1 and that 50ms is enough time to allow the voltage on pin 1 to fluctuate.
+    It is also assumed that the user only wishes to send one character at a time to the recipient.
+    This code should work with other verions of the code that wait for there to be a byte in the serial buffer before reading from the serial connection.
+    When running the style checker, there is a "potential indentation error" that appears on line 87 despite the curly bracket being on the same line as the "if" statement it terminates.
+
+
+
