@@ -1,0 +1,23 @@
+name: Ryan Brooks
+id #: 1530605
+course: CMPUT 274 fall 2018
+
+assignment: Weekly exercise 5: counting lights
+
+included files: countingLights.cpp
+                README
+
+instructions:
+the increment button should be attached to pin 6 and the
+decrement button should be attached to pin 7.  The LED
+pins should be connected to pins 9-13 with the order being
+red red green red red.
+put the .cpp file with a makefile from the arduino-ua/makefile-example
+makefile to compile and put the code onto the arduino
+use make in the terminal to create a compiled version of the code
+and use make uplaod to upload the code to the arduino.
+
+Notes:
+A style error saying a potential indentation error has occured
+on my global variable initialization and I have no clue how to get
+rid of it so I just left the initialization as it is.
